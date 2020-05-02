@@ -1,0 +1,22 @@
+---
+ - name: pull an image
+   hosts: localhost
+   tasks:
+   - name: pulling haproxy
+     docker_image:
+      name: haproxy
+   - name: pulling apache
+     docker_image:
+      name: httpd
+   - name: pulling wordpress
+     docker_image: 
+      name: wordpress
+   - name: pulling MySQL
+     docker_image:
+      name: mysql     
+
+   # - name: Apache Pull
+    #  docker_image:
+     #   name: library/httpd
+      #  source: pull
+...
