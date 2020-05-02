@@ -7,9 +7,9 @@
    - name: pulling haproxy
      docker_image:
       name: haproxy
-   - name: pulling apache
+   - name: pulling ubuntu
      docker_image:
-      name: httpd
+      name: ubntu:xenial
    - name: pulling wordpress
      docker_image: 
       name: wordpress
