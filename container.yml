@@ -1,0 +1,12 @@
+---
+- name: Apache Container
+  hosts: localhost
+  tasks:
+  - name: SSH installation 
+    docker_container:
+     name: apachePF
+     image: httpd
+     command: 
+     exposed_ports: 
+     - 22
+...
