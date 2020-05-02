@@ -9,7 +9,7 @@
       name: haproxy
    - name: pulling ubuntu
      docker_image:
-      name: ubntu:xenial
+      name: ubuntu:xenial
    - name: pulling wordpress
      docker_image: 
       name: wordpress
