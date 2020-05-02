@@ -19,4 +19,3 @@ So they can be used by anyone who needs an already configured image
 The Ansible Version that will be used for this Project is ansible 2.9.7
 The Docker Version that will be used for this Project is Docker version 19.03.8-ce
 
-Hello from vscode
