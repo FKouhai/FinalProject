@@ -1,4 +1,6 @@
 ---
+#Creacion de tasks en el playbook para hacer un pull
+#De Docker Hub de las imagenes necesarias para el proyecto
  - name: pull an image
    hosts: localhost
    tasks:
@@ -13,10 +15,5 @@
       name: wordpress
    - name: pulling MySQL
      docker_image:
-      name: mysql     
-
-   # - name: Apache Pull
-    #  docker_image:
-     #   name: library/httpd
-      #  source: pull
+      name: mysql
 ...
