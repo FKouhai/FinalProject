@@ -5,8 +5,11 @@ This repo will contain
 The playbooks and handlres as well as variables for:
 
   1) An Apache Docker container
+  
   2)An HAProxy VM(Which will work as a Load Balancer using the Round Robin method)
-  3)A MySQL Docker container 
+  
+  3)A MySQL Docker container
+  
   4)A WordPress Docker container
 
 Im going to upload my Docker images to Docker HUB
