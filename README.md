@@ -6,7 +6,7 @@ The playbooks and handlres as well as variables for:
 
   1) An Apache Docker container
   
-  2)An HAProxy VM(Which will work as a Load Balancer using the Round Robin method)
+  2)An HAProxy Container(Which will work as a Load Balancer using the Round Robin method)
   
   3)A MySQL Docker container
   
