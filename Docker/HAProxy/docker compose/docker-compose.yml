@@ -23,7 +23,7 @@ services:
     image: haproxy  #   Imagen de HAProxy
     ports:  
       - 80:80
-    command: bash
+    command: apt-get update && apt-get install -y haproxy
       
     container_name: 'franproxy' #LB
     tty: true  
