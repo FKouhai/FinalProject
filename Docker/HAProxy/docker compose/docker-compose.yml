@@ -1,0 +1,32 @@
+version: '2'  
+  
+services:  
+  apache1: # Apache 1  
+    image: frankyb/apacheiner2:v3 # Servicio apache 1 
+    command: bash
+
+    ports:  
+      - 1234:80  
+    container_name: 'apacheiner1'  # apacheiner1
+    tty: true #Para que los contenedores no nazcan muertos
+  
+  apache2: # Apache 2  
+    image: frankyb/apacheiner2:v3 # Servicio apache 2 
+    command: bash
+    ports:  
+      - 8080:80  
+    container_name: 'apacheiner2'  # apacheiner2
+    tty: true  
+    
+  
+  haproxy:  # Haproxy service  
+    image: haproxy  #   Imagen de HAProxy
+    ports:  
+      - 80:80
+    command: bash
+      
+    container_name: 'franproxy' #LB
+    tty: true  
+    volumes:  # Volumen con config file   
+      - '/mnt/particion/Projects/Ansible/FinalProject/Docker/HAProxy:/usr/local/etc/haproxy/haproxy.cfg:ro'
+    
