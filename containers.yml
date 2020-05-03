@@ -1,0 +1,15 @@
+- name: Containers
+  hosts: localhost
+  tasks: 
+  - name: HAProxy container
+    docker_container:
+     name: haproxyfp
+     image: haproxy:latest
+     ports:
+      - "2201:22" 
+    exposed_ports:
+     - 22
+    
+      
+       
+
