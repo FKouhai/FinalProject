@@ -1,2 +1,1 @@
-Dockerfile to run an image as a container exposing the port 22 and 80
-docker run -p 8080:80 -p 2200:22 apachefp:latest
+Este docker file es usado para crear la imagen de los servicios de Apache
