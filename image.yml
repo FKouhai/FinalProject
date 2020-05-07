@@ -13,7 +13,7 @@
    - name: pulling wordpress
      docker_image: 
       name: wordpress
-   - name: pulling MySQL
+   - name: pulling mysql-server
      docker_image:
-      name: mysql
+      name: mysql/mysql-server
 ...
