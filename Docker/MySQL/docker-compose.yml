@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  db:
+    container_name: 'fransql2'
+    image:   mysql/mysql-server:latest
+    volumes:
+     - db_data:/var/lib/mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    tty: true
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    ports:
+    - 3307:3306
+  wordpress:
+    container_name: 'frandpress'
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+     - 8181:80
+    restart: unless-stopped
+    tty: true
+    environment:
+     - WORDPRESS_DB_HOST=db:3306
+     - WORDPRESS_USER=wordpress
+     - WORDPRESS_PASSWORD=wordpress
+     - WORDPRESS_DB_NAME=wordpressdb
+    working_dir: /var/www/html
+volumes:
+  db_data: {}
