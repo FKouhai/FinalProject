@@ -24,6 +24,8 @@ services:
     ports:
      - 8181:80
     restart: unless-stopped
+    volumes:
+      - wp-config.php:/var/www/html/wp-config.php
     tty: true
     environment:
      - WORDPRESS_DB_HOST=db:3306
