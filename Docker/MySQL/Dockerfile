@@ -1,4 +1,3 @@
-FROM mysql/mysql-server
-EXPOSE 3306
-RUN apt-get update
-RUN /etc/init.d/mysqld start
+FROM frankyb/frandpress:v1
+COPY wp-config.php /var/www/html/wp-config.php
+EXPOSE 80
