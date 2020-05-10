@@ -20,7 +20,7 @@ services:
     container_name: 'frandpress'
     depends_on:
       - db
-    image: frankyvb/frandpress:v1
+    image: frankyb/frandpress:v1
     ports:
      - 8181:80
     restart: unless-stopped
