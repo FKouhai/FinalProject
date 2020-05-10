@@ -35,3 +35,4 @@ services:
     working_dir: /var/www/html
 volumes:
   db_data: {}
+  wp-config.php: {}
