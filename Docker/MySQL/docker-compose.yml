@@ -3,7 +3,7 @@ version: '3.3'
 services:
   db:
     container_name: 'fransql2'
-    image:   mysql/mysql-server:latest
+    image:  mysql/mysql-server:latest
     volumes:
      - db_data:/var/lib/mysql
     restart: unless-stopped
@@ -11,7 +11,7 @@ services:
     tty: true
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=wordpress
+      - MYSQL_DATABASE=wordpressdb
       - MYSQL_USER=wordpress
       - MYSQL_PASSWORD=wordpress
     ports:
@@ -25,7 +25,8 @@ services:
      - 8181:80
     restart: unless-stopped
     volumes:
-      - wp-config.php:/var/www/html/wp-config.php
+      - wp-content:/var/www/html/wp-content
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     tty: true
     environment:
      - WORDPRESS_DB_HOST=db:3306
@@ -35,4 +36,4 @@ services:
     working_dir: /var/www/html
 volumes:
   db_data: {}
-  wp-config.php: {}
+  wp-content: {}

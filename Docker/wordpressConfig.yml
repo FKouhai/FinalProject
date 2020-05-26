@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name: Carga de fichero wp-config.php
+    docker_container:
+        name: frandpress
+        copy:
+            src: ./wp-config.php
+            dest: /var/www/html/wp-config.php
