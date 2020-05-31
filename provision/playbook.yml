@@ -6,7 +6,12 @@
        update_cache: yes
     - name: Instalacion de Docker
       apt: name=docker.io 
+    - name: Instalacion de git
+      apt: name=git  
     - name: Inicio del servicio de docker
       command:
-       cmd: systemctl enable docker
+       cmd: systemctl --now enable docker
+    - name: Inclusion del usuario vagrant en el grupo de docker
+      command:
+       cmd: usermod -aG docker vagrant
 
