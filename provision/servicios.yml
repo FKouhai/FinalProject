@@ -1,0 +1,17 @@
+---
+- hosts: hosts
+  tasks:
+  - name: Inicio de apache1 
+    command:
+    cmd: docker exec -it apacheiner1 /etc/init.d/apache2 start
+  - name: Inicio de apache2 
+    command:
+    cmd: docker exec -it apacheiner2 /etc/init.d/apache2 start
+  - name: Inicio de haproxy 
+    command:
+    cmd: docker exec -it apacheiner2 /etc/init.d/haproxy start
+
+
+
+
+...
