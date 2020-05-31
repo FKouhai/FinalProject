@@ -9,7 +9,7 @@
     cmd: docker exec -it apacheiner2 /etc/init.d/apache2 start
   - name: Inicio de haproxy 
     command:
-    cmd: docker exec -it apacheiner2 /etc/init.d/haproxy start
+    cmd: docker exec -it franproxy /etc/init.d/haproxy start
 
 
 
