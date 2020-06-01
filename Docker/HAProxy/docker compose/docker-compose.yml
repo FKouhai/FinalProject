@@ -4,7 +4,7 @@ services:
   apache1: # Apache 1  
     image: frankyb/apacheiner2:v3 # Servicio apache 1 
     command: bash
-
+    restart: unless-stopped
     ports:  
       - 1234:80  
     container_name: 'apacheiner1'  # apacheiner1
@@ -16,17 +16,17 @@ services:
     ports:  
       - 8080:80  
     container_name: 'apacheiner2'  # apacheiner2
-    tty: true  
-    
+    tty: true
+    restart: unless-stopped  
   
   haproxy:  # Haproxy service  
     image: haproxy  #   Imagen de HAProxy
     ports:  
       - 80:80
-    command: apt-get update && apt-get install -y haproxy
-      
+    command: apt-get update && apt-get install -y haproxy  
     container_name: 'franproxy' #LB
-    tty: true  
-    volumes:  # Volumen con config file   
-      - '/mnt/particion/Projects/Ansible/FinalProject/Docker/HAProxy:/usr/local/etc/haproxy/haproxy.cfg:ro'
+    tty: true
+    restart: unless-stopped  
+    #volumes:  # Volumen con config file   
+    #  - '/mnt/particion/Projects/Ansible/FinalProject/Docker/HAProxy:/usr/local/etc/haproxy/haproxy.cfg:ro'
     
