@@ -20,10 +20,10 @@ services:
     restart: unless-stopped  
   
   haproxy:  # Haproxy service  
-    image: haproxy  #   Imagen de HAProxy
+    image: frankyb/franproxy  #   Imagen de HAProxy
     ports:  
       - 80:80
-    command: apt-get update && apt-get install -y haproxy  
+    command:   bash
     container_name: 'franproxy' #LB
     tty: true
     restart: unless-stopped  
